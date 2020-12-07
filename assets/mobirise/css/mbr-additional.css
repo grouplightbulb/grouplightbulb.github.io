@@ -902,7 +902,7 @@ a {
 }
 .cid-sh3rx2gc4A {
   padding-top: 3rem;
-  padding-bottom: 6rem;
+  padding-bottom: 0rem;
   background-color: #ffffff;
 }
 @media (max-width: 991px) {
@@ -915,6 +915,102 @@ a {
 }
 .cid-sh3rx2gc4A img {
   width: 100%;
+}
+.cid-sirSotDnfw {
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  background-color: #ffffff;
+}
+@media (max-width: 991px) {
+  .cid-sirSotDnfw .image-wrapper {
+    margin-bottom: 1rem;
+  }
+}
+.cid-sirSotDnfw .row {
+  flex-direction: row-reverse;
+}
+.cid-sirSotDnfw img {
+  width: 100%;
+}
+.cid-sirRSuq85H {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #ffffff;
+}
+.cid-sirRSuq85H .row {
+  align-items: stretch;
+  justify-content: center;
+}
+.cid-sirRSuq85H .row .img-item {
+  display: -webkit-flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.cid-sirRSuq85H .row .img-item img {
+  width: 100%;
+  object-fit: cover;
+  min-height: 1px;
+}
+.cid-sirRTjHzYv {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #ffffff;
+}
+.cid-sirRTjHzYv .row {
+  align-items: stretch;
+  justify-content: center;
+}
+.cid-sirRTjHzYv .row .img-item {
+  display: -webkit-flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.cid-sirRTjHzYv .row .img-item img {
+  width: 100%;
+  object-fit: cover;
+  min-height: 1px;
+}
+.cid-sirTcHF1EI {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #ffffff;
+}
+.cid-sirTcHF1EI .row {
+  align-items: stretch;
+  justify-content: center;
+}
+.cid-sirTcHF1EI .row .img-item {
+  display: -webkit-flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.cid-sirTcHF1EI .row .img-item img {
+  width: 100%;
+  object-fit: cover;
+  min-height: 1px;
+}
+.cid-sirTmwU9ME {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #ffffff;
+}
+.cid-sirTmwU9ME .row {
+  align-items: stretch;
+  justify-content: center;
+}
+.cid-sirTmwU9ME .row .img-item {
+  display: -webkit-flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.cid-sirTmwU9ME .row .img-item img {
+  width: 100%;
+  object-fit: cover;
+  min-height: 1px;
 }
 .cid-sh3scxj0G5 {
   padding-top: 0rem;
@@ -951,50 +1047,12 @@ a {
 .cid-sh3scVMra5 .mbr-description {
   text-align: left;
 }
-.cid-sh3tIbMri5 {
-  padding-top: 0rem;
-  padding-bottom: 0rem;
+.cid-sirRhx4gPa {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   background-color: #ffffff;
 }
-.cid-sh3tIbMri5 .item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 4rem;
-  flex-direction: column;
-}
-.cid-sh3tIbMri5 .icon-box {
-  margin-bottom: 1rem;
-  text-align: center;
-  display: inline-block;
-}
-.cid-sh3tIbMri5 .text-box {
-  text-align: center;
-}
-.cid-sh3tIbMri5 span {
-  font-size: 2rem;
-  color: #6592e6;
-  font-weight: bold;
-  display: block;
-}
-@media (max-width: 991px) {
-  .cid-sh3tIbMri5 .card {
-    margin-bottom: 2rem;
-  }
-  .cid-sh3tIbMri5 .card-wrapper {
-    margin-bottom: 2rem;
-  }
-}
-@media (max-width: 768px) {
-  .cid-sh3tIbMri5 span {
-    font-size: 21vw;
-  }
-}
-.cid-sh3tIbMri5 .icon-text,
-.cid-sh3tIbMri5 .mbr-section-btn {
-  text-align: center;
-}
-.cid-sh3tIbMri5 .icon-text,
-.cid-sh3tIbMri5 .mbr-section-btn DIV {
+.cid-sirRhx4gPa .mbr-section-subtitle {
   text-align: left;
 }
 .cid-sirOJlgxiC {
@@ -1035,46 +1093,12 @@ a {
 .cid-sirOJUVk5x .mbr-description {
   text-align: left;
 }
-.cid-sirPfW58mL {
-  padding-top: 0rem;
-  padding-bottom: 2rem;
+.cid-sirRAASwEM {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   background-color: #ffffff;
 }
-.cid-sirPfW58mL .item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 4rem;
-  flex-direction: column;
-}
-.cid-sirPfW58mL .icon-box {
-  margin-bottom: 1rem;
-  text-align: center;
-  display: inline-block;
-}
-.cid-sirPfW58mL .text-box {
-  text-align: center;
-}
-.cid-sirPfW58mL span {
-  font-size: 2rem;
-  color: #6592e6;
-  font-weight: bold;
-  display: block;
-}
-@media (max-width: 991px) {
-  .cid-sirPfW58mL .card {
-    margin-bottom: 2rem;
-  }
-  .cid-sirPfW58mL .card-wrapper {
-    margin-bottom: 2rem;
-  }
-}
-@media (max-width: 768px) {
-  .cid-sirPfW58mL span {
-    font-size: 21vw;
-  }
-}
-.cid-sirPfW58mL .icon-text,
-.cid-sirPfW58mL .mbr-section-btn {
+.cid-sirRAASwEM .mbr-section-subtitle {
   text-align: left;
 }
 .cid-sh3s3S0hMW {
