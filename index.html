@@ -259,205 +259,44 @@
             </div>
         </div>
     </div>
-  <div id="echarts_graph1" style="height: 500px;width: 500px"></div>
+  <div id="main_graph" style="width: 100%; height: 400px;"></div>
 
 
 <script type="text/javascript">
-    var dom = document.getElementById("echarts_graph1");
-    var myChart = echarts.init(dom);
-    var data = [
-        {name: '力学小学', value: [118.776293, 32.061235, 83696]},
-        {name: '琅琊路小学', value: [118.778307, 32.072046, 81338]},
-        {name: '拉萨小学', value: [118.777307, 32.053112, 77017]},
-        {name: '北京东路小学', value: [118.805551, 32.065391, 70726]},
-        {name: '芳草园小学', value:[118.754584, 32.063607, 70436]},
-        {name: '金陵汇文学校', value: 68765},
-        {name: '银城小学', value: 64991},
-        {name: '南师附小', value: 60881},
-        {name: '凤凰花园城小学', value: 57782},
-        {name: '汉江路小学', value: 52258},
-        {name: '金中实小', value: 48950},
-        {name: '三牌楼小学', value: 44897},
-        {name: '南理工实小', value: 44017},
-        {name: '天正小学', value: 52439},
-        {name: '科睿小学', value: 66268},
-        {name: '中山小学', value: 38879},
-        {name: '石鼓路小学', value: 38890},
-        {name: '夫子庙小学', value: 38272},
-        {name: '南师附中新城小学', value: 65086},
-        {name: '五老村小学', value: 40488},
-        {name: '金陵小学和园小学', value: 47210},
-        {name: '栖霞中心小学', value: 14600},
-        {name: '长江路小学', value: 58665},
-        {name: '宝船小学', value: 45635},
-        {name: '游府西街小学', value: 67574},
-        {name: '浦口区外国语学校小学部', value: 23834},
-        {name: '赤壁路小学', value: 49885},
-    ];
-    option = {
-        title: {
-            text: '南京部分小学学区房房价',
-            subtext: 'data from xxx',
-            left: 'center'
-        },
-        tooltip:{
-          trigger:'item',
-            formatter:function (params) {
-              return params.name+`<br\>`+params.value[2]+'元';
+	// 基于准备好的dom，初始化echarts实例
+	var myChart = echarts.init(document.getElementById('main_graph'));
 
-            }
-        },
-        visualMap: {
-            show: true,
-            top: 'top',
-            min: 10000,
-            max: 90000,
-            seriesIndex: 0,
-            calculable: true,
-            inRange: {
-                color: ['blue', 'blue', 'green', 'yellow', 'red']
-            }
-        },
-        bmap: {
-            center: [118.77, 32.05],
-            zoom: 13,
-            roam: true,
-            mapStyle: {
-                styleJson: [{
-                    'featureType': 'water',
-                    'elementType': 'all',
-                    'stylers': {
-                        'color': '#d1d1d1'
-                    }
-                }, {
-                    'featureType': 'land',
-                    'elementType': 'all',
-                    'stylers': {
-                        'color': '#f3f3f3'
-                    }
-                }, {
-                    'featureType': 'railway',
-                    'elementType': 'all',
-                    'stylers': {
-                        'visibility': 'off'
-                    }
-                }, {
-                    'featureType': 'highway',
-                    'elementType': 'all',
-                    'stylers': {
-                        'color': '#fdfdfd'
-                    }
-                }, {
-                    'featureType': 'highway',
-                    'elementType': 'labels',
-                    'stylers': {
-                        'visibility': 'off'
-                    }
-                }, {
-                    'featureType': 'arterial',
-                    'elementType': 'geometry',
-                    'stylers': {
-                        'color': '#fefefe'
-                    }
-                }, {
-                    'featureType': 'arterial',
-                    'elementType': 'geometry.fill',
-                    'stylers': {
-                        'color': '#fefefe'
-                    }
-                }, {
-                    'featureType': 'poi',
-                    'elementType': 'all',
-                    'stylers': {
-                        'visibility': 'off'
-                    }
-                }, {
-                    'featureType': 'green',
-                    'elementType': 'all',
-                    'stylers': {
-                        'visibility': 'off'
-                    }
-                }, {
-                    'featureType': 'subway',
-                    'elementType': 'all',
-                    'stylers': {
-                        'visibility': 'off'
-                    }
-                }, {
-                    'featureType': 'manmade',
-                    'elementType': 'all',
-                    'stylers': {
-                        'color': '#d1d1d1'
-                    }
-                }, {
-                    'featureType': 'local',
-                    'elementType': 'all',
-                    'stylers': {
-                        'color': '#d1d1d1'
-                    }
-                }, {
-                    'featureType': 'arterial',
-                    'elementType': 'labels',
-                    'stylers': {
-                        'visibility': 'off'
-                    }
-                }, {
-                    'featureType': 'boundary',
-                    'elementType': 'all',
-                    'stylers': {
-                        'color': '#fefefe'
-                    }
-                }, {
-                    'featureType': 'building',
-                    'elementType': 'all',
-                    'stylers': {
-                        'color': '#d1d1d1'
-                    }
-                }, {
-                    'featureType': 'label',
-                    'elementType': 'labels.text.fill',
-                    'stylers': {
-                        'color': '#999999'
-                    }
-                }]
-            }
-        },
-        series : [
-            {
-                name: '学区房房价',
-                type: 'effectScatter',
-                coordinateSystem: 'bmap',
-                data: data,
-                symbolSize: function (val) {
-                    return val[2] / 1700;
-                },
-                encode: {
-                    value: 2
-                },
-                showEffectOn: 'render',
-                rippleEffect: {
-                    brushType: 'stroke'
-                },
-                hoverAnimation: true,
-                label: {
-                    formatter: '{b}',
-                    position: 'right',
-                    show: false
-                },
-                itemStyle: {
-                    color: 'purple'
-                },
-                emphasis: {
-                    label: {
-                        show: true
-                    }
-                }
-            },
-        ]
-    };
-    if (option && typeof option === "object") {
-        myChart.setOption(option, true);
-    }
+	// 指定图表的配置项和数据
+	var option =
+	{
+		title :
+		{
+			text : 'ECharts 入门示例'
+		},
+		tooltip : {},
+		legend :
+		{
+			data :
+			[ '销量' ]
+		},
+		xAxis :
+		{
+			data :
+			[ "衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子" ]
+		},
+		yAxis : {},
+		series :
+		[
+		{
+			name : '销量',
+			type : 'bar',
+			data :
+			[ 5, 20, 36, 10, 10, 20 ]
+		} ]
+	};
+
+	// 使用刚指定的配置项和数据显示图表。
+	myChart.setOption(option);
 </script>
 </section>
 
