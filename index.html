@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html  >
 <head>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <!-- Site made with Mobirise Website Builder v5.1.4, https://mobirise.com -->
   <meta charset="UTF-8">
   <script src="echarts/dist/echarts.js"></script>
@@ -242,7 +243,7 @@
 
     
 
-<!--     <div class="container">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-5">
                 <div class="image-wrapper">
@@ -251,8 +252,8 @@
                 </div>
             </div>
         </div>
-    </div> -->
-  <div id="container" style="height: 500px;width: 500px"></div>
+    </div>
+  <div id="echarts_graph1" style="height: 500px;width: 500px"></div>
 
 <!-- 新添加的jQuery -->
 <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -265,7 +266,7 @@
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Mi8MUXFlEQoxYl68c8pG14tTz5zZpXTS"></script>
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
 <script type="text/javascript">
-    var dom = document.getElementById("container");
+    var dom = document.getElementById("echarts_graph1");
     var myChart = echarts.init(dom);
     var data = [
         {name: '力学小学', value: [118.776293, 32.061235, 83696]},
