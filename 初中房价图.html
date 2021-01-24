@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@4/dist/echarts.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@1/dist/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@1/dist/ecStat.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@4/dist/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@4/map/js/china.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@4/map/js/world.js"></script>
+       <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=xfhhaTThl11qYVrqLZii6w8qE5ggnhrY&__ec_v__=20190126"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@4/dist/extension/bmap.min.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+var data = [
+    {name: '南京市第二十九中', value: [118.752041,32.058564,74126]},
+    {name: '金陵汇文学校初中部', value: [118.734319,32.04742,66486]},
+    {name: '南师附中树人学校', value: [118.738016,32.076981,58947]},
+    {name: '钟英中学', value: [118.791384,32.036613,52133]},
+    {name: '南师附中新城初中本部', value: [118.743138,32.004545,47925]},
+    {name: '南师附中仙林分校', value: [118.925338,32.102235,38741]},
+    {name: '南京市第十二中', value: [118.751784,32.09293,37825]},
+    {name: '雨花台中学', value: [118.785382,31.99588,36692]},
+    {name: '莲花实验学校', value: [118.723287,31.970523,26050]},
+    {name: '花园中学', value: [119.08071,32.186097,10498]},
+    {name: '竹山中学', value: [118.848393,31.950754,27094]},
+    {name: '弘光中学', value: [118.855536,32.034068,37138]},
+    {name: '人民中学', value: [118.791807,32.055172,54699]},
+    {name: '南京市第十三中', value: [118.797953,32.07012,28767]},
+    {name: '建邺初级中学', value: [118.764872,32.025795,36222]},
+    {name: '南京市第二十七中学', value: [118.814289,32.014749,35338]},
+    {name: '南京市第五十四中', value: [118.827183,32.054395,34242]},
+    {name: '南京市第五十中', value: [118.778824,32.081199,39511]},
+    {name: '伯乐中学', value: [118.834233,32.128689,26339]},
+    {name: '华电中学', value: [118.852329,32.12926,25979]},
+    {name: '南京一中马群分校', value: [118.905891,32.043123,26039]},
+    {name: '南京市第八中学', value: [118.764911,32.090447,34352]},
+    {name: '栖霞中学', value: [118.883992,32.132423,14600]},
+    {name: '南京市第六十六中学', value: [118.800892,32.100932,28754]},
+    {name: '摄山中学', value: [119.015078,32.145925,16723]},
+    {name: '燕子矶初中', value: [118.825815,32.146075,24298]},
+    {name: '宁海中学', value: [118.777647,32.066833,45339]},
+    {name: '南京大学附属中学', value: [118.786683,32.067325,40663]},
+    {name: '科利华中学', value: [118.791958,32.084998,57613]},
+    {name: '南京市第九初级中学', value: [118.798199,32.053372,46797]},
+    {name: '中华中学', value: [118.791289,32.024617,36817]},
+    {name: '南京市梅园中学', value: [118.808817,32.051486,46564]},
+    {name: '百家湖中学', value: [118.831595,31.948434,30821]},
+    {name: '文枢中学初中部', value: [118.786604,32.019765,33280]},
+];
+
+option = {
+    title: {
+        text: '南京部分初中学区房房价',
+        left: 'center'
+    },
+    tooltip : {
+        trigger: 'item'
+    },
+    visualMap: {
+        show: true,
+        top: 'top',
+        min: 10000,
+        max: 75000,
+        seriesIndex: 0,
+        calculable: true,
+        inRange: {
+            color: ['purple', 'blue', 'green', 'yellow', 'red']
+        }
+    },
+    bmap: {
+        center: [118.89, 32.05],
+        zoom: 12,
+        roam: true,
+        mapStyle: {
+            styleJson: [{
+                'featureType': 'water',
+                'elementType': 'all',
+                'stylers': {
+                    'color': '#d1d1d1'
+                }
+            }, {
+                'featureType': 'land',
+                'elementType': 'all',
+                'stylers': {
+                    'color': '#f3f3f3'
+                }
+            }, {
+                'featureType': 'railway',
+                'elementType': 'all',
+                'stylers': {
+                    'visibility': 'off'
+                }
+            }, {
+                'featureType': 'highway',
+                'elementType': 'all',
+                'stylers': {
+                    'color': '#fdfdfd'
+                }
+            }, {
+                'featureType': 'highway',
+                'elementType': 'labels',
+                'stylers': {
+                    'visibility': 'off'
+                }
+            }, {
+                'featureType': 'arterial',
+                'elementType': 'geometry',
+                'stylers': {
+                    'color': '#fefefe'
+                }
+            }, {
+                'featureType': 'arterial',
+                'elementType': 'geometry.fill',
+                'stylers': {
+                    'color': '#fefefe'
+                }
+            }, {
+                'featureType': 'poi',
+                'elementType': 'all',
+                'stylers': {
+                    'visibility': 'off'
+                }
+            }, {
+                'featureType': 'green',
+                'elementType': 'all',
+                'stylers': {
+                    'visibility': 'off'
+                }
+            }, {
+                'featureType': 'subway',
+                'elementType': 'all',
+                'stylers': {
+                    'visibility': 'off'
+                }
+            }, {
+                'featureType': 'manmade',
+                'elementType': 'all',
+                'stylers': {
+                    'color': '#d1d1d1'
+                }
+            }, {
+                'featureType': 'local',
+                'elementType': 'all',
+                'stylers': {
+                    'color': '#d1d1d1'
+                }
+            }, {
+                'featureType': 'arterial',
+                'elementType': 'labels',
+                'stylers': {
+                    'visibility': 'off'
+                }
+            }, {
+                'featureType': 'boundary',
+                'elementType': 'all',
+                'stylers': {
+                    'color': '#fefefe'
+                }
+            }, {
+                'featureType': 'building',
+                'elementType': 'all',
+                'stylers': {
+                    'color': '#d1d1d1'
+                }
+            }, {
+                'featureType': 'label',
+                'elementType': 'labels.text.fill',
+                'stylers': {
+                    'color': '#999999'
+                }
+            }]
+        }
+    },
+    series : [
+        {
+            name: '学区房房价',
+            type: 'effectScatter',
+            coordinateSystem: 'bmap',
+            data: data,
+            symbolSize: function (val) {
+                return val[2] / 1400;
+            },
+            encode: {
+                value: 2
+            },
+            showEffectOn: 'render',
+            rippleEffect: {
+                brushType: 'stroke'
+            },
+            hoverAnimation: true,
+            label: {
+                formatter: '{b}',
+                position: 'right',
+                show: false
+            },
+            itemStyle: {
+                color: 'purple'
+            },
+            emphasis: {
+                label: {
+                    show: true
+                }
+            }
+        },
+    ]
+};
+if (option && typeof option === "object") {
+myChart.setOption(option, true);
+};
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>
